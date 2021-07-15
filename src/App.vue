@@ -1,30 +1,51 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
   <router-view/>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+  import { onBeforeMount } from 'vue';
+  import { useRouter, useRoute } from 'vue-router';
+  import { auth } from './utilities/firebase';
 
-#nav {
-  padding: 30px;
+  export default {
+    setup() {
+      const router = useRouter();
+      const route = useRoute();
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+      onBeforeMount(() => {
+        auth.onAuthStateChanged((user) => {
+          if (!user && (route.path=='/' || route.path=='/about')) {
+            router.replace('/login');
+          } else if (!user && (route.path=='/JP' || route.path=='/aboutJP')) {
+            router.replace('/loginJP');
+          } else if (route.path=='/login' || route.path=='/register') {
+            router.replace('/');
+          } else if (route.path=='/loginJP' || route.path=='/registerJP') {
+            router.replace('/JP');
+          }
+        });
+      });
+    },
+    mounted() {
+      this.$store.commit('updateCartFromLocalStorage')
     }
   }
-}
+</script>
+
+<style lang="scss">
+  body {
+    background: white;
+    color: black;
+  }
+
+  #app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+  }
+
+  a {
+    color: inherit;
+  }
 </style>

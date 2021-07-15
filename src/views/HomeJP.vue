@@ -1,26 +1,26 @@
 <template>
   <div class="home">
   	<div id="navBar">
-  		<router-link to="/JP">日本語</router-link>
-  		<button class="logout" @click="Logout">Logout</button>
+  		<router-link to="/">English</router-link>
+  		<button class="logout" id="logoutJP" @click="Logout">ログアウト</button>
   		<img src="../assets/cart.png" @click="viewCart()"/>
   	</div>
 
-  	<h1>Welcome to the Marketplace!</h1>
+  	<h1 class="jpStyle">市場へようこそ！</h1>
 
-  	<CartDescript
+  	<CartDescriptJP
   		:active="active.cart_drawer"
   		v-on:close-cart="closeCart()"
   	/>
 
-  	<ProdDescript
+  	<ProdDescriptJP
   		:product="product"
   		:active="active.product_drawer"
   		v-on:close-product-drawer="closeProductDrawer()"
   	/>
 
   	<div class="product-cards-container">
-  		<ProdSummary
+  		<ProdSummaryJP
   			v-for="product in items"
   			:key="product.id"
   			:product="product" 
@@ -31,17 +31,17 @@
 </template>
 
 <script>
-	import items from '../data/items.js'
-	import ProdSummary from '../components/products/ProdSummary.vue'
-	import ProdDescript from '../components/products/ProdDescript.vue'
-	import CartDescript from '../components/cart/CartDescript.vue'
+	import items from '../data/itemsJP.js'
+	import ProdSummaryJP from '../components/products/ProdSummaryJP.vue'
+	import ProdDescriptJP from '../components/products/ProdDescriptJP.vue'
+	import CartDescriptJP from '../components/cart/CartDescriptJP.vue'
 	import { ref, onBeforeMount } from 'vue'
 	import { auth } from '../utilities/firebase'
 	
 	export default {
-	  name: 'Home',
+	  name: 'HomeJP',
 	  components: {
-	  	ProdSummary, ProdDescript, CartDescript
+	  	ProdSummaryJP, ProdDescriptJP, CartDescriptJP
 	  },
 	  data() {
 	  	return{
@@ -72,7 +72,7 @@
 	  	const Logout = () => {
 	  		auth
 	  			.signOut()
-	  			.then(() => alert("Sign out successful"))
+	  			.then(() => alert("ログアウトに成功しました"))
 	  			.catch(err => alert(err.message));
 	  	}
 
@@ -82,59 +82,8 @@
 </script>
 
 <style lang="scss">
-	body{
-		margin: 0;
-		padding: 0;
-	}
-
-	.product-cards-container{
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-	}
-
-	img{
-		height: 50px;
-		width: 50px;
-		cursor: pointer;
-	}
-
-	#navBar{
-		background-color: black;
-		width: 100%;
-		float: right;
-		margin-right: 10px;
-		padding: 0;
-		margin: 0px;
-		margin-top: -22px;
-
-		a{
-			color: white;
-			float: right;
-			margin-right: 10px;
-			margin-top: 12px;
-		}
-
-		button{
-			float:right;
-			margin-right: 30px;
-			margin-top: 10px
-		}
-
-		img{
-			float:right;
-			margin-right:30px
-		}
-	}
-
-	.logout{
-		padding: 5px;
-		background-color: red;
-		border: none;
-		color: white;
-		font-weight: bold;
-		font-size: 1.15rem;
-		border-radius: 5px;
-		cursor: pointer;
+	#logoutJP{
+		font-family: $jpFont; 
+		line-height: $jpLineHeight;
 	}	
 </style>
