@@ -17,7 +17,7 @@
 
 <script>
 	import { ref } from 'vue';
-	import { auth } from '../utilities/firebase';
+	import { auth } from '../../utilities/firebase';
 	
 	export default {
 		setup() {

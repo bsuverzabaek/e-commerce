@@ -1,21 +1,21 @@
 <template>
 	<div class="card">
-		<h3>{{ product.name }}</h3>
+		<h3 class="jpStyle">{{ product.name }}</h3>
 
-		<p class="text-muted">Category: {{ product.category }}</p>
-		<p class="description">{{ description }}</p>
-		<h5 class="price">Price: ${{ product.price.toFixed(2) }}</h5>
+		<p class="text-mutedJP">カテゴリー： {{ product.category }}</p>
+		<p class="descriptionJP">{{ description }}</p>
+		<h5 class="priceJP">値段： ￥{{ product.price }}</h5>
 		<button 
-			class="view-product-button" 
+			class="view-product-buttonJP" 
 			@click="$emit('view-product',product)"
 		>
-			View Product
+			詳細を見る
 		</button>
 	</div>
 </template>
 
 <script>
-	export default{
+	export default {
 		props: ['product'],
 		computed: {
 			description() {
@@ -34,20 +34,26 @@
 		background-color: white;
 		box-shadow: 0 0 5px gray;
 		
-		h5.price{
+		h5.priceJP{
 			color: black;
+			font-family: $jpFont; 
+			line-height: $jpLineHeight;
 		}
 
-		p.description{
+		p.descriptionJP{
 			font-size: .85rem;
+			font-family: $jpFont; 
+			line-height: $jpLineHeight;
 		}
 
-		p.text-muted{
+		p.text-mutedJP{
 			color: black;
+			font-family : $jpFont;
+			line-height: $jpLineHeight;
 		}
 	}
 
-	button.view-product-button{
+	button.view-product-buttonJP{
 		padding: 10px;
 		background-color: rgb(79,160,187);
 		border: none;
@@ -56,6 +62,8 @@
 		font-size: 1.15rem;
 		border-radius: 5px;
 		cursor: pointer;
+		font-family: $jpFont; 
+		line-height: $jpLineHeight;
 	}
 
 	@media (min-width:500px){

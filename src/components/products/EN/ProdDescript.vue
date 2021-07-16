@@ -13,7 +13,7 @@
 		<div v-if="product" class="product-details">
 			<h3 class="text-center">{{ product.name }}</h3>
 			<div v-if="product.name=='Sandals'">
-				<img src="../../assets/products/sandals.jpg" class="imgStyle"/>
+				<img src="../../../assets/products/sandals.jpg" class="imgStyle"/>
 				<star-rating 
 					:rating="4.1" 
 					:read-only="true" 
@@ -24,7 +24,7 @@
 				</star-rating>
 			</div>
 			<div v-else-if="product.name=='Vest'">
-				<img src="../../assets/products/vest.jpg" class="imgStyle"/>
+				<img src="../../../assets/products/vest.jpg" class="imgStyle"/>
 				<star-rating 
 					:rating="4.3" 
 					:read-only="true" 
@@ -35,7 +35,7 @@
 				</star-rating>
 			</div>
 			<div v-else-if="product.name=='Cap'">
-				<img src="../../assets/products/cap.jpg" class="imgStyle"/>
+				<img src="../../../assets/products/cap.jpg" class="imgStyle"/>
 				<star-rating 
 					:rating="3.8" 
 					:read-only="true" 
@@ -46,7 +46,7 @@
 				</star-rating>
 			</div>
 			<div v-else-if="product.name=='Watch'">
-				<img src="../../assets/products/watch.jpg" class="imgStyle"/>
+				<img src="../../../assets/products/watch.jpg" class="imgStyle"/>
 				<star-rating 
 					:rating="4.2" 
 					:read-only="true" 
@@ -57,7 +57,7 @@
 				</star-rating>
 			</div>
 			<div v-else-if="product.name=='Ski Jacket'">
-				<img src="../../assets/products/skiJacket.jpg" class="imgStyle"/>
+				<img src="../../../assets/products/skiJacket.jpg" class="imgStyle"/>
 				<star-rating 
 					:rating="3.9" 
 					:read-only="true" 
@@ -86,7 +86,7 @@
 <script>
 	import StarRating from 'vue-star-rating';
 
-	export default{
+	export default {
 		props: ['product', 'active'],
 		emits: ['close-product-drawer'],
 		components: {

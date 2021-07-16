@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
+import Home from '../views/EN/Home.vue'
 
 const routes = [
   {
@@ -10,27 +10,27 @@ const routes = [
   {
     path: '/JP',
     name: 'HomeJP',
-    component: () => import('../views/HomeJP.vue')
+    component: () => import('../views/JP/HomeJP.vue')
   },
   {
     path: '/login',
     name: 'Login',
-    component: () => import('../views/Login.vue')
+    component: () => import('../views/EN/Login.vue')
   },
   {
     path: '/loginJP',
     name: 'LoginJP',
-    component: () => import('../views/LoginJP.vue')
+    component: () => import('../views/JP/LoginJP.vue')
   },
   {
     path: '/register',
     name: 'Register',
-    component: () => import('../views/Register.vue')
+    component: () => import('../views/EN/Register.vue')
   },
   {
     path: '/registerJP',
     name: 'RegisterJP',
-    component: () => import('../views/RegisterJP.vue')
+    component: () => import('../views/JP/RegisterJP.vue')
   }
 ]
 

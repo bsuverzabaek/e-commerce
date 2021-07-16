@@ -46,7 +46,7 @@
 </template>
 
 <script>
-	export default{
+	export default {
 		name: 'CartDescriptJP',
 		props: ['active'],
 		emits: ['close-cart'],

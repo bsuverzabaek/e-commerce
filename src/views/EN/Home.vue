@@ -3,7 +3,7 @@
   	<div id="navBar">
   		<router-link to="/JP">日本語</router-link>
   		<button class="logout" @click="Logout">Logout</button>
-  		<img src="../assets/cart.png" @click="viewCart()"/>
+  		<img src="../../assets/cart/cart.png" @click="viewCart()"/>
   	</div>
 
   	<h1>Welcome to the Marketplace!</h1>
@@ -31,12 +31,12 @@
 </template>
 
 <script>
-	import items from '../data/items.js'
-	import ProdSummary from '../components/products/ProdSummary.vue'
-	import ProdDescript from '../components/products/ProdDescript.vue'
-	import CartDescript from '../components/cart/CartDescript.vue'
+	import items from '../../data/EN/items.js'
+	import ProdSummary from '../../components/products/EN/ProdSummary.vue'
+	import ProdDescript from '../../components/products/EN/ProdDescript.vue'
+	import CartDescript from '../../components/cart/EN/CartDescript.vue'
 	import { ref, onBeforeMount } from 'vue'
-	import { auth } from '../utilities/firebase'
+	import { auth } from '../../utilities/firebase'
 	
 	export default {
 	  name: 'Home',
