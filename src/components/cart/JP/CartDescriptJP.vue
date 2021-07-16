@@ -106,12 +106,6 @@
 </script>
 
 <style lang="scss">
-	@media (min-width:500px){
-		.cart{
-			width: 450px;
-		}
-	}
-
 	.cartStyleJP{
 		margin-left: 50px;
 		font-family: $jpFont; 

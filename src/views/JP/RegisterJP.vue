@@ -9,7 +9,7 @@
 			<input type="submit" value="作成" class="jpStyle"/>
 			<p class="jpStyle">
 				すでにアカウントをお持ちですか？ 
-				<router-link to="/loginJP" class="jpStyle">ログイン</router-link>
+				<router-link to="/JP" class="jpStyle">ログイン</router-link>
 			</p>
 		</form>
 	</div>

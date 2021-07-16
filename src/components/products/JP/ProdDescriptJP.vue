@@ -113,10 +113,4 @@
 		font-family: $jpFont;
 		line-height: $jpLineHeight;
 	}
-	
-	@media (min-width:500px){
-		.drawer{
-			width: 450px;
-		}
-	}
 </style>

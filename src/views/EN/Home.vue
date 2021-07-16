@@ -1,7 +1,7 @@
 <template>
   <div class="home">
   	<div id="navBar">
-  		<router-link to="/JP">日本語</router-link>
+  		<router-link to="/homeJP">日本語</router-link>
   		<button class="logout" @click="Logout">Logout</button>
   		<img src="../../assets/cart/cart.png" @click="viewCart()"/>
   	</div>

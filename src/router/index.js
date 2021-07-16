@@ -4,23 +4,23 @@ import Home from '../views/EN/Home.vue'
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/JP',
-    name: 'HomeJP',
-    component: () => import('../views/JP/HomeJP.vue')
-  },
-  {
-    path: '/login',
     name: 'Login',
     component: () => import('../views/EN/Login.vue')
   },
   {
-    path: '/loginJP',
+    path: '/JP',
     name: 'LoginJP',
     component: () => import('../views/JP/LoginJP.vue')
+  },
+  {
+    path: '/home',
+    name: 'Home',
+    component: Home
+  },
+  {
+    path: '/homeJP',
+    name: 'HomeJP',
+    component: () => import('../views/JP/HomeJP.vue')
   },
   {
     path: '/register',

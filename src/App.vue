@@ -14,14 +14,18 @@
 
       onBeforeMount(() => {
         auth.onAuthStateChanged((user) => {
-          if (!user && (route.path=='/' || route.path=='/about')) {
-            router.replace('/login');
-          } else if (!user && (route.path=='/JP' || route.path=='/aboutJP')) {
-            router.replace('/loginJP');
-          } else if (route.path=='/login' || route.path=='/register') {
+          if (!user && route.path=='/home') {
             router.replace('/');
-          } else if (route.path=='/loginJP' || route.path=='/registerJP') {
+          } else if (!user && route.path=='/homeJP') {
             router.replace('/JP');
+          } else if (route.path=='/' || route.path=='/register') {
+            if (user) {
+              router.replace('/home');
+            }
+          } else if (route.path=='/JP' || route.path=='/registerJP') {
+            if (user) {
+              router.replace('/homeJP');
+            }
           }
         });
       });

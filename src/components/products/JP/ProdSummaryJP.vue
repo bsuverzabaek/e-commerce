@@ -6,8 +6,9 @@
 		<p class="descriptionJP">{{ description }}</p>
 		<h5 class="priceJP">値段： ￥{{ product.price }}</h5>
 		<button 
-			class="view-product-buttonJP" 
+			class="view-product-button" 
 			@click="$emit('view-product',product)"
+			id="prodButtonJP"
 		>
 			詳細を見る
 		</button>
@@ -27,13 +28,6 @@
 
 <style lang="scss">
 	.card{
-		width: 80%;
-		margin: 10%;
-		padding: 10px;
-		border-radius: 5px;
-		background-color: white;
-		box-shadow: 0 0 5px gray;
-		
 		h5.priceJP{
 			color: black;
 			font-family: $jpFont; 
@@ -53,23 +47,8 @@
 		}
 	}
 
-	button.view-product-buttonJP{
-		padding: 10px;
-		background-color: rgb(79,160,187);
-		border: none;
-		color: white;
-		font-weight: bold;
-		font-size: 1.15rem;
-		border-radius: 5px;
-		cursor: pointer;
+	#prodButtonJP{
 		font-family: $jpFont; 
 		line-height: $jpLineHeight;
-	}
-
-	@media (min-width:500px){
-		.card{
-			width: 350px;
-			margin: 10px;
-		}
 	}
 </style>

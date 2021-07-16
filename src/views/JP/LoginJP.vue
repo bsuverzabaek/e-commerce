@@ -1,6 +1,6 @@
 <template>
 	<div class="login">
-		<router-link to="/login">English</router-link>
+		<router-link to="/">English</router-link>
 		<h1 class="jpStyle">ログイン</h1>
 		
 		<form @submit.prevent="Login">
